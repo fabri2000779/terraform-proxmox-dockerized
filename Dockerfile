@@ -54,13 +54,13 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
-go get -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox ; \ 
+RUN go get -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
 
-go get -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox ; \
+RUN go get -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
-go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox ; \
+RUN go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
 
-go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox ; \
+RUN go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
 COPY $GOPATH/bin/terraform-provider-proxmox /usr/local/bin/
 
