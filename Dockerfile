@@ -54,6 +54,10 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
+WORKDIR $GOPATH
+
+RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+
 RUN go get -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provider-proxmox
 
 RUN go get -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
