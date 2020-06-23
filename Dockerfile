@@ -66,6 +66,6 @@ RUN go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-pr
 
 RUN go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
-COPY $GOPATH/bin/terraform-provider-proxmox /usr/local/bin/
+COPY /bin/terraform-provider-proxmox /usr/local/bin/
 
-COPY $GOPATH/bin/terraform-provisioner-proxmox /usr/local/bin/
+COPY /bin/terraform-provisioner-proxmox /usr/local/bin/
