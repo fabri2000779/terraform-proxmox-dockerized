@@ -28,4 +28,4 @@ RUN mv $GOPATH/bin/terraform-provisioner-proxmox /usr/local/bin/
 
 WORKDIR /work
 
-CMD ["/bin/bash"]
+CMD ["terraform"]
