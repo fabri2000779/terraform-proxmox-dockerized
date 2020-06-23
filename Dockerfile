@@ -39,7 +39,6 @@ cd /usr/local/go/src; \
 \
 rm -rf \
 
-# Install proxmox plugin
 /usr/local/go/pkg/bootstrap \
 
 	/usr/local/go/pkg/obj \
@@ -66,6 +65,6 @@ RUN go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-pr
 
 RUN go install -v github.com/Telmate/terraform-provider-proxmox/cmd/terraform-provisioner-proxmox
 
-COPY /bin/terraform-provider-proxmox /usr/local/bin/
+mv $GOPATH/bin/terraform-provider-proxmox /usr/local/bin/
 
-COPY /bin/terraform-provisioner-proxmox /usr/local/bin/
+mv $GOPATH/bin/terraform-provisioner-proxmox /usr/local/bin/
